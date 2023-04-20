@@ -1,11 +1,14 @@
-
+import Container from "./components/Container";
 
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <main>
+       <Container>
+
+      </Container>
+    </main>
+  
   );
 }
 
