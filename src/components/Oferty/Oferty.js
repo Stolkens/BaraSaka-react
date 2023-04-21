@@ -1,8 +1,7 @@
 
 import PageTitle from '../PageTitle/PageTitle';
-import PropertyCity from '../PropertyCity/PropertyCity';
-import PorpertyType from '../PropertyType/PropertyType';
-import styles from './Oferty.module.scss'
+import PorpertyType from '../SearchForm/SearchForm';
+// import styles from './Oferty.module.scss'
 
 
 const Oferty = () => {
@@ -10,13 +9,8 @@ const Oferty = () => {
 
   return (
     <div>
-      <PageTitle>Oferty</PageTitle>
-      <div className={styles.form}>
-        <PorpertyType/>
-        <PropertyCity/>
-      </div>
-     
-      
+      <PageTitle>Oferty</PageTitle>  
+      <PorpertyType/>
     </div>
     
   )
