@@ -1,34 +1,15 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import PageTitle from '../PageTitle/PageTitle';
 import styles from './Oferty.module.scss';
 
 const Oferty = () => {
 
+
+  const properties = useSelector(state =>state.properties)
+  console.log(properties);
   const [property, setProperty] = useState('');
 
-  
-  const properties = [
-    {
-      id: 1,
-      type: 'mieszkanie',
-    },
-    {
-      id: 2,
-      type: 'dom',
-    },
-    {
-      id: 3,
-      type: 'mieszkanie',
-    },
-    {
-      id: 4,
-      type: 'mieszkanie',
-    },
-    {
-      id: 5,
-      type: 'działka',
-    },
-  ]
  
   const handleSubmit = (e) => {
     e.preventDefault();
