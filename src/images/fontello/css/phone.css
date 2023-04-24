@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'phone';
-  src: url('../font/phone.eot?83815175');
-  src: url('../font/phone.eot?83815175#iefix') format('embedded-opentype'),
-       url('../font/phone.woff2?83815175') format('woff2'),
-       url('../font/phone.woff?83815175') format('woff'),
-       url('../font/phone.ttf?83815175') format('truetype'),
-       url('../font/phone.svg?83815175#phone') format('svg');
+  src: url('../font/phone.eot?26652896');
+  src: url('../font/phone.eot?26652896#iefix') format('embedded-opentype'),
+       url('../font/phone.woff2?26652896') format('woff2'),
+       url('../font/phone.woff?26652896') format('woff'),
+       url('../font/phone.ttf?26652896') format('truetype'),
+       url('../font/phone.svg?26652896#phone') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'phone';
-    src: url('../font/phone.svg?83815175#phone') format('svg');
+    src: url('../font/phone.svg?26652896#phone') format('svg');
   }
 }
 */
@@ -55,5 +55,6 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
+.icon-search:before { content: '\e800'; } /* '' */
 .icon-mail:before { content: '\e801'; } /* '' */
 .icon-mobile:before { content: '\e803'; } /* '' */

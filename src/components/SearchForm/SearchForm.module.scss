@@ -1,5 +1,27 @@
+@import '../../styles/settings.scss';
+
 .form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  .select {
+    width: 150px;
+    padding: 7px;
+    border-radius: 10px;
+  }
+}
+.button {
+  padding: 7px;
+  border-radius: 10px;
+  width: 50px;
+  &:hover {
+    background-color: $color-success;
+  }
+}
+.searchResult {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
