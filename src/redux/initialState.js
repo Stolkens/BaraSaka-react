@@ -40,6 +40,14 @@ const initialState = {
       district: 'Wełnowiec',
       description:"Kawałek ziemi w nieciekawej okolicy csdhcias csniasnc ascxiasnx asxnasixna",
     },
+    {
+    id: 6,
+      name: 'Miekszanie w kamienicy',
+      type: 'mieszkanie',
+      city: 'Katowice',
+      district: 'Centrum',
+      description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
+    },
   ]
 };
 

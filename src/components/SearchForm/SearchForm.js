@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styles from './SearchForm.module.scss';
+import Select from '../Select/Select';
 
 const SearchForm = () => {
 
@@ -24,27 +25,13 @@ const SearchForm = () => {
   const uniquePropertyCities = [...new Set(properties.map(property => property.city))];
   const uniquePropertyDistricts = [...new Set(properties.map(property => property.district))];
 
+
   return (
     <div>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <select className={styles.select} name="properties" value={property} onChange={(e) => setProperty(e.target.value) }>
-          <option value="">Nieruchomość</option>
-          {uniquePropertyTypes.map(type => (
-          <option key={type} value={type}>{type}</option>
-          ))}
-        </select>
-        <select className={styles.select} name="cities" value={city} onChange={(e) => setCity(e.target.value)}>
-          <option value="">Miasto</option>
-          {uniquePropertyCities.map(city => (
-          <option key={city} value={city}>{city}</option>
-          ))}
-        </select>
-        <select className={styles.select} name="districts" value={district} onChange={(e) => setDistrict(e.target.value)}>
-          <option value="">Dzielnica</option>
-          {uniquePropertyDistricts.map(district => (
-          <option key={district} value={district}>{district}</option>
-          ))}
-        </select>
+        <Select options={uniquePropertyTypes} label="Typ nieruchomości" name='Typ nieruchomości' value={property} onChange={(e) => setProperty(e.target.value) }/>
+        <Select options={uniquePropertyCities} label="Miasto" name="Miasto" value={city} onChange={(e) => setCity(e.target.value)}/>
+        <Select options={uniquePropertyDistricts} label="Dzielnica" name="Dzielnica" value={district} onChange={(e) => setDistrict(e.target.value)}/>
         <button className={styles.button} type='submit'><i class="icon-search"></i></button>
       </form>
       {searchResult.length > 0 && (
