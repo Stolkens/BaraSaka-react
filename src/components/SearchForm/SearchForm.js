@@ -43,7 +43,7 @@ const SearchForm = () => {
       {searchResult.length > 0 && (
         <div className={styles.searchResult}>
             {searchResult.map(result => (
-              <Link to="/nieruchomosc" key={result.id} className={styles.propertiesLink}>
+              <Link to={'/nieruchomosc/' + result.id} key={result.id} className={styles.propertiesLink}>
                 <h4>{result.name}</h4>
                 <p>{result.description}</p>
               </Link>
