@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styles from './SearchForm.module.scss';
 import Select from '../Select/Select';
+import { Link } from 'react-router-dom';
 
 const SearchForm = () => {
-
 
   const properties = useSelector(state =>state.properties)
   
@@ -14,8 +14,6 @@ const SearchForm = () => {
   const [purpose, setPurpose] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     let results = properties.filter(data => 
@@ -45,15 +43,14 @@ const SearchForm = () => {
       {searchResult.length > 0 && (
         <div className={styles.searchResult}>
             {searchResult.map(result => (
-              <div key={result.id}>
+              <Link to="/nieruchomosc" key={result.id} className={styles.propertiesLink}>
                 <h4>{result.name}</h4>
                 <p>{result.description}</p>
-              </div>
+              </Link>
             ))} 
         </div>
       )}
     </div>
-    
   )
 }
 

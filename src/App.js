@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Onas from "./components/Onas/Onas";
 import Oferty from "./components/Oferty/Oferty";
+import Property from "./components/Property/Property";
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/kredyty" element={<Kredyty />} /> 
           <Route path="/cennik" element={<Cennik />} />
           <Route path="*" element={<NotFound />} /> */}
+          <Route path="/nieruchomosc" element={< Property/>} />
         </Routes>        
       </Container>
     </main>

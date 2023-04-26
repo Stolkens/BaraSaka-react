@@ -2,7 +2,7 @@ const initialState = {
   properties : [
     {
       id: 1,
-      name: 'Miekszanie w centrum Katowic',
+      name: 'Mieszkanie w centrum Katowic',
       type: 'mieszkanie',
       purpose: 'sprzedaż',
       city: 'Katowice',
@@ -20,7 +20,7 @@ const initialState = {
     },
     {
       id: 3,
-      name: 'Miekszanie na zadupiu',
+      name: 'Mieskzanie na zadupiu',
       type: 'mieszkanie',
       purpose: 'wynajem',
       city: 'Sosnowiec',
@@ -29,7 +29,7 @@ const initialState = {
     },
     {
       id: 4,
-      name: 'Miekszanie na Batorym',
+      name: 'Mieszkanie na Batorym',
       type: 'mieszkanie',
       purpose: 'sprzedaż',
       city: 'Chorzów',
