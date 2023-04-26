@@ -9,6 +9,16 @@ const initialState = {
       area:'57m2',
       district: 'Centrum',
       description:"Dwupokojowe mieszaknie na drugim piętrze czteropiętrowego bloku i jakies inne pierdoły",
+      images: [
+              '/photos/mieszkanie_1/1.jpg',
+              '/photos/mieszkanie_1/2.jpg',
+              '/photos/mieszkanie_1/3.jpg',
+              '/photos/mieszkanie_1/4.jpg',
+              '/photos/mieszkanie_1/5.jpg',
+              '/photos/mieszkanie_1/6.jpg',
+              '/photos/mieszkanie_1/7.jpg',
+              '/photos/mieszkanie_1/8.jpg',
+      ]
     },
     {
       id: '2',
@@ -19,6 +29,9 @@ const initialState = {
       area:'157m2',
       district: 'Nikiszowiec',
       description:"Piękny dom na Nikiszowcu z blefnsndas csahdiasd ashdioasxdasn",
+      images: [
+
+      ]
     },
     {
       id: '3',
@@ -29,6 +42,9 @@ const initialState = {
       area:'47m2',
       district: 'Centrum',
       description:"W samym srodku niczego mieskzanie djsdkasmcasasm xasnjcbasklx snxianskxmas",
+      images: [
+
+      ]
     },
     {
       id: '4',
@@ -39,6 +55,9 @@ const initialState = {
       area:'82m2',
       district: 'Batory',
       description:"Dla odwaznych mieskzanie na Batorym bcsda c scsioc cnsijaso nsiasmoxa",
+      images: [
+
+      ]
     },
     {
       id: '5',
@@ -49,6 +68,9 @@ const initialState = {
       area:'2000m2',
       district: 'Wełnowiec',
       description:"Kawałek ziemi w nieciekawej okolicy csdhcias csniasnc ascxiasnx asxnasixna",
+      images: [
+
+      ]
     },
     {
     id: '6',
@@ -59,6 +81,9 @@ const initialState = {
       area:'90m2',
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
+      images: [
+
+      ]
     },
     {
     id: '7',
@@ -69,6 +94,9 @@ const initialState = {
       area:'52m2',
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
+      images: [
+
+      ]
     },
     {
     id: '8',
@@ -79,6 +107,9 @@ const initialState = {
       area:'45m2',
       district: 'Centrum',
       description:"Mieszkanie w cdssdffsdv vsdvsd fsdf sdf  fsdf ds fsd fsdsd",
+      images: [
+
+      ]
     },
     {
     id: '9',
@@ -89,6 +120,9 @@ const initialState = {
       area:'210m2',
       district: 'Nikiszowiec',
       description:"Dom w dasdasdvsd dasdas dasdas  kasuasda sbasdas sakbdasd",
+      images: [
+
+      ]
     },
     {
     id: '10',
@@ -99,6 +133,9 @@ const initialState = {
       area:'72m2',
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
+      images: [
+
+      ]
     },  
   ]
 };
