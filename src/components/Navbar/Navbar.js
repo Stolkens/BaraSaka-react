@@ -18,8 +18,8 @@ const Navbar = () => {
               to="/kredyty">Kredyty</NavLink></li>
           <li><NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined}
               to="/cennik">Cennik</NavLink></li>
-          <li><Link to="/mobile" class="icon-mobile icon"></Link></li>
-          <li><Link to="/mail" class="icon-mail icon"></Link></li>
+          <li><Link to="/mobile" className="icon-mobile icon"></Link></li>
+          <li><Link to="/mail" className="icon-mail icon"></Link></li>
         </ul>
       </nav>
     </div>
