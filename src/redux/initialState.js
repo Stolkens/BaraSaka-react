@@ -1,5 +1,5 @@
 const initialState = {
-  areas: ['20', '40', '60', '80', '100', '150', '200', '1000', '1500', '2000', '3000'],
+  areas: [20, 40, 60, 80, 100, 150, 200, 1000, 1500, 2000, 3000],
   properties : [
     {
       id: '1',
@@ -7,7 +7,7 @@ const initialState = {
       type: 'mieszkanie',
       purpose: 'sprzedaż',
       city: 'Katowice',
-      area:'57m2',
+      area: 57,
       district: 'Centrum',
       description:"Dwupokojowe mieszaknie na drugim piętrze czteropiętrowego bloku i jakies inne pierdoły",
       images: [
@@ -27,7 +27,7 @@ const initialState = {
       type: 'dom',
       purpose: 'wynajem',
       city: 'Katowice',
-      area:'157m2',
+      area: 157,
       district: 'Nikiszowiec',
       description:"Piękny dom na Nikiszowcu z blefnsndas csahdiasd ashdioasxdasn",
       images: [
@@ -40,7 +40,7 @@ const initialState = {
       type: 'mieszkanie',
       purpose: 'wynajem',
       city: 'Sosnowiec',
-      area:'47m2',
+      area: 47,
       district: 'Centrum',
       description:"W samym srodku niczego mieskzanie djsdkasmcasasm xasnjcbasklx snxianskxmas",
       images: [
@@ -53,7 +53,7 @@ const initialState = {
       type: 'mieszkanie',
       purpose: 'sprzedaż',
       city: 'Chorzów',
-      area:'82m2',
+      area: 82,
       district: 'Batory',
       description:"Dla odwaznych mieskzanie na Batorym bcsda c scsioc cnsijaso nsiasmoxa",
       images: [
@@ -66,7 +66,7 @@ const initialState = {
       type: 'działka',
       purpose: 'sprzedaż',
       city: 'Katowice',
-      area:'2000m2',
+      area: 2000,
       district: 'Wełnowiec',
       description:"Kawałek ziemi w nieciekawej okolicy csdhcias csniasnc ascxiasnx asxnasixna",
       images: [
@@ -79,7 +79,7 @@ const initialState = {
       type: 'mieszkanie',
       purpose: 'wynajem',
       city: 'Katowice',
-      area:'90m2',
+      area: 90,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [
@@ -92,7 +92,7 @@ const initialState = {
       type: 'mieszkanie',
       purpose: 'wynajem',
       city: 'Sosnowiec',
-      area:'52m2',
+      area: 52,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [
@@ -105,7 +105,7 @@ const initialState = {
       type: 'mieszkanie',
       purpose: 'sprzedaż',
       city: 'Katowice',
-      area:'45m2',
+      area: 45,
       district: 'Centrum',
       description:"Mieszkanie w cdssdffsdv vsdvsd fsdf sdf  fsdf ds fsd fsdsd",
       images: [
@@ -118,7 +118,7 @@ const initialState = {
       type: 'dom',
       purpose: 'wynajem',
       city: 'Katowice',
-      area:'210m2',
+      area: 210,
       district: 'Nikiszowiec',
       description:"Dom w dasdasdvsd dasdas dasdas  kasuasda sbasdas sakbdasd",
       images: [
@@ -131,7 +131,7 @@ const initialState = {
       type: 'mieszkanie',
       purpose: 'sprzedaż',
       city: 'Katowice',
-      area:'72m2',
+      area: 72,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [

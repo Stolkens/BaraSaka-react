@@ -21,7 +21,8 @@ const SearchForm = () => {
   const [filteredPurposes, setFilteredPurposes] = useState([]);
   const [areaMin, setAreaMin] = useState('');
   const [areaMax, setAreaMax] = useState('');
-
+  const [filteredAreasMax, setFilteredAreasMax] = useState([]);
+  const [filteredAreasMin, setFilteredAreasMin] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +31,7 @@ const SearchForm = () => {
       (!purpose || data.purpose === purpose) &&
       (!city || data.city === city) &&
       (!district || data.district === district) &&
-      (!areaMin || data.area >=areaMin) &&
+      (!areaMin || data.area >= areaMin) &&
       (!areaMax || data.area <= areaMax)
     );
     setSearchResult(results);
@@ -46,6 +47,8 @@ const SearchForm = () => {
     const propertyTypes = [];
     const districts = [];
     const purposes =[];
+    const areasMax = [];
+    const areasMin =[];
 
     for (let propertyData of properties) {
       if (city === propertyData.city) {
@@ -61,20 +64,16 @@ const SearchForm = () => {
         propertyTypes.push(propertyData.type);
       }
     }
-    console.log('cities', cities);
-    console.log('propertyTypes', propertyTypes);
-    console.log('districts', districts);
-    console.log('purposes', purposes);
     if (city) {
       setFilteredPropertyTypes([...new Set(propertyTypes)]);
       setFilteredDistricts([...new Set(districts)]);
       setIsDistrictDisabled(false);
     }
-    if (property) {
+    else if (property) {
       setFilteredCities([...new Set(cities)]);
       setFilteredPurposes([...new Set(purposes)]);
     }
-    if (purpose) {
+    else if (purpose) {
       setFilteredPropertyTypes([...new Set(propertyTypes)]);
       setFilteredCities([...new Set(cities)]);
     }
@@ -84,7 +83,53 @@ const SearchForm = () => {
       setFilteredCities(uniquePropertyCities);
       setFilteredPurposes(uniquePropertyPurposes);
     }
-  }, [city, property, purpose]);
+
+    const handleAreaFilter = (areaMin, areaMax) => {
+      let filteredAreasMax = [];
+      let filteredAreasMin = [];
+    
+      for (let area of areas) {
+        if (areaMin && area > areaMin) {
+          filteredAreasMax.push(area);
+        }
+        if (areaMax && area < areaMax) {
+          filteredAreasMin.push(area);
+        }
+      }
+    
+      setFilteredAreasMax(areaMin ? [...new Set(filteredAreasMax)] : areas);
+      setFilteredAreasMin(areaMax ? [...new Set(filteredAreasMin)] : areas);
+    };
+
+    handleAreaFilter(areaMin, areaMax);
+  
+
+    // filteredAreas(areaMin, areasMax, setFilteredAreasMax);
+    // filteredAreas(areaMax, areasMin, setFilteredAreasMin);
+    // if(areaMin) {
+    //   for (let area of areas) {
+    //     if( area > areaMin) {
+    //       areasMax.push(area);
+    //       setFilteredAreasMax([...new Set(areasMax)]);
+    //     }
+    //   }
+    // }
+    // else {
+    //   setFilteredAreasMax(areas);
+    // }
+
+    // if(areaMax) {
+    //   for (let area of areas) {
+    //     if( area < areaMax) {
+    //       areasMin.push(area);
+    //       setFilteredAreasMin([...new Set(areasMin)]);
+    //     }
+    //   }
+    // }
+    // else {
+    //   setFilteredAreasMin(areas);
+    // }
+  }, [city, property, purpose, areaMin, areaMax]);
 
 
   return (
@@ -94,8 +139,8 @@ const SearchForm = () => {
         <Select options={filteredPurposes} label="Typ transakcji" name='Typ transakcji' value={purpose} onChange={(e) => setPurpose(e.target.value)} />
         <Select options={filteredCities} label="Miasto" name="Miasto" value={city} onChange={(e) => setCity(e.target.value)} />
         <Select options={filteredDistricts} label="Dzielnica" name="Dzielnica" value={district} disabled={isDistrictDisabled} onChange={(e) => setDistrict(e.target.value)} />
-        <Select options={areas} name="PowierzchniaMin" label="Powierzchnia min." value={areaMin} onChange={(e) => setAreaMin(e.target.value)}></Select>
-        <Select options={areas} name="PowierzchniaMax" label="Powierzchnia max." value={areaMax} onChange={(e) => setAreaMax(e.target.value)}></Select>
+        <Select options={filteredAreasMin} name="PowierzchniaMin" label="Powierzchnia min." value={areaMin} onChange={(e) => setAreaMin(e.target.value)}></Select>
+        <Select options={filteredAreasMax} name="PowierzchniaMax" label="Powierzchnia max." value={areaMax} onChange={(e) => setAreaMax(e.target.value)}></Select>
         <button className={styles.button} type='submit'><i className="icon-search"></i></button>
       </form>
       {searchResult.length > 0 && (
