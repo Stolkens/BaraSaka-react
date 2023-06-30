@@ -1,5 +1,6 @@
 const initialState = {
   areas: [20, 40, 60, 80, 100, 150, 200, 1000, 1500, 2000, 3000],
+  numberOfRooms : [1, 2, 3, 4, 5, 6, 7, 8],
   properties : [
     {
       id: '1',
@@ -8,6 +9,7 @@ const initialState = {
       purpose: 'sprzedaż',
       city: 'Katowice',
       area: 57,
+      rooms: 3,
       district: 'Centrum',
       description:"Dwupokojowe mieszaknie na drugim piętrze czteropiętrowego bloku i jakies inne pierdoły",
       images: [
@@ -28,6 +30,7 @@ const initialState = {
       purpose: 'wynajem',
       city: 'Katowice',
       area: 157,
+      rooms: 6,
       district: 'Nikiszowiec',
       description:"Piękny dom na Nikiszowcu z blefnsndas csahdiasd ashdioasxdasn",
       images: [
@@ -41,6 +44,7 @@ const initialState = {
       purpose: 'wynajem',
       city: 'Sosnowiec',
       area: 47,
+      rooms: 2,
       district: 'Centrum',
       description:"W samym srodku niczego mieskzanie djsdkasmcasasm xasnjcbasklx snxianskxmas",
       images: [
@@ -54,6 +58,7 @@ const initialState = {
       purpose: 'sprzedaż',
       city: 'Chorzów',
       area: 82,
+      rooms: 4,
       district: 'Batory',
       description:"Dla odwaznych mieskzanie na Batorym bcsda c scsioc cnsijaso nsiasmoxa",
       images: [
@@ -80,6 +85,7 @@ const initialState = {
       purpose: 'wynajem',
       city: 'Katowice',
       area: 90,
+      rooms: 4,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [
@@ -93,6 +99,7 @@ const initialState = {
       purpose: 'wynajem',
       city: 'Sosnowiec',
       area: 52,
+      rooms: 3,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [
@@ -106,6 +113,7 @@ const initialState = {
       purpose: 'sprzedaż',
       city: 'Katowice',
       area: 45,
+      rooms: 2,
       district: 'Centrum',
       description:"Mieszkanie w cdssdffsdv vsdvsd fsdf sdf  fsdf ds fsd fsdsd",
       images: [
@@ -119,6 +127,7 @@ const initialState = {
       purpose: 'wynajem',
       city: 'Katowice',
       area: 210,
+      rooms: 5,
       district: 'Nikiszowiec',
       description:"Dom w dasdasdvsd dasdas dasdas  kasuasda sbasdas sakbdasd",
       images: [
@@ -132,6 +141,7 @@ const initialState = {
       purpose: 'sprzedaż',
       city: 'Katowice',
       area: 72,
+      rooms: 4,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [
