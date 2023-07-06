@@ -89,10 +89,9 @@ const SearchForm = () => {
     const propertyTypes = [];
     const districtsFilteredByCity = [];
     const districtsFilteredByProperty = [];
+    const discritsFilteredByPurpose = [];
     const purposes = [];
     
-    
-
     for (let propertyData of properties) {
       if (city === propertyData.city) {
         propertyTypes.push(propertyData.type);
@@ -106,29 +105,42 @@ const SearchForm = () => {
       if(purpose === propertyData.purpose) {
         citiesFilteredByPurpose.push(propertyData.city);
         propertyTypes.push(propertyData.type);
+        discritsFilteredByPurpose.push(propertyData.district);
       }
     }
-    const commonCities = citiesFilteredByProperty.filter(element => citiesFilteredByPurpose.includes(element))
-    // console.log('discritsFilteredByCity', districtsFilteredByCity);
-    // console.log('discritsFilteredByProperty', districtsFilteredByProperty);
-    console.log('citiesFilteredByProperty', citiesFilteredByProperty);
+    const commonCitiesforPropertyAndPurpose = citiesFilteredByProperty.filter(element => citiesFilteredByPurpose.includes(element));
+    const commonDistrictsForPropertyAndCity = districtsFilteredByProperty.filter(element => districtsFilteredByCity.includes(element));
+    const commonDistrictsForPurposeAndCity = discritsFilteredByPurpose.filter(element => districtsFilteredByCity.includes(element));
+    console.log('discritsFilteredByCity', districtsFilteredByCity);
+    console.log('discritsFilteredByProperty', districtsFilteredByProperty);
+    console.log('districtsFilreredByPurpose', discritsFilteredByPurpose);
+    // console.log('citiesFilteredByProperty', citiesFilteredByProperty);
     console.log('citiesFilteredByPurpose', citiesFilteredByPurpose);
+    console.log('commonDistrictsForPurposeAndCity', commonDistrictsForPurposeAndCity);
     // console.log('propertytypes', propertyTypes);
     // console.log('purposes', purposes);
-    console.log('commonCities', commonCities)
+    // console.log('commonCitiesforPropertyAndPurpose', commonCitiesforPropertyAndPurpose)
 
     if (property) {
       setFilteredCities([...new Set(citiesFilteredByProperty)]);
       setFilteredPurposes([...new Set(purposes)]);
       setFilteredDistricts([...new Set(districtsFilteredByProperty)]);
       if (property && purpose) {
-        setFilteredCities([...new Set(commonCities)]);
+        setFilteredCities([...new Set(commonCitiesforPropertyAndPurpose)]);
+        if (property && purpose && city) {
+          setIsDistrictDisabled(false);
+          setFilteredDistricts([new Set(commonDistrictsForPropertyAndCity)]);
+        }
       }
     }
 
     else if (purpose) {
       setFilteredPropertyTypes([...new Set(propertyTypes)]);
       setFilteredCities([...new Set(citiesFilteredByPurpose)]);
+      if (purpose && city) {
+        setIsDistrictDisabled(false);
+        setFilteredDistricts([...new Set(commonDistrictsForPurposeAndCity)]);
+      }
     }
 
     else if (city) {
@@ -137,8 +149,6 @@ const SearchForm = () => {
       setIsDistrictDisabled(false);
     }
 
-
-  
     else {
       setFilteredPropertyTypes(uniquePropertyTypes);
       setFilteredDistricts(uniquePropertyDistricts);
