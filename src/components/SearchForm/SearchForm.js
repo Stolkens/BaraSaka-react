@@ -28,6 +28,10 @@ const SearchForm = () => {
   const [roomsMax, setRoomsMax] = useState('');
   const [filteredRoomsMin, setFilteredRoomsMin] = useState([]);
   const [filteredRoomsMax, setFilteredRoomsMax] = useState([]);
+  const [priceMin, setpriceMin] = useState('');
+  const [priceMax, setpriceMax] = useState('');
+  const [filteredPriceMin, setFilteredPriceMin] = useState([]);
+  const [filteredPriceMax, setFilteredPriceMax] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +43,9 @@ const SearchForm = () => {
       (!areaMin || data.area >= areaMin) &&
       (!areaMax || data.area <= areaMax) &&
       (!roomsMin || data.rooms >= roomsMin) &&
-      (!roomsMax || data.rooms <= roomsMax)
+      (!roomsMax || data.rooms <= roomsMax) &&
+      (!priceMin || data.price >= priceMin) &&
+      (!priceMax || data.price <= priceMax)
     );
     setSearchResult(results);
   }
@@ -111,12 +117,12 @@ const SearchForm = () => {
     const commonCitiesforPropertyAndPurpose = citiesFilteredByProperty.filter(element => citiesFilteredByPurpose.includes(element));
     const commonDistrictsForPropertyAndCity = districtsFilteredByProperty.filter(element => districtsFilteredByCity.includes(element));
     const commonDistrictsForPurposeAndCity = discritsFilteredByPurpose.filter(element => districtsFilteredByCity.includes(element));
-    console.log('discritsFilteredByCity', districtsFilteredByCity);
-    console.log('discritsFilteredByProperty', districtsFilteredByProperty);
-    console.log('districtsFilreredByPurpose', discritsFilteredByPurpose);
+    // console.log('discritsFilteredByCity', districtsFilteredByCity);
+    // console.log('discritsFilteredByProperty', districtsFilteredByProperty);
+    // console.log('districtsFilreredByPurpose', discritsFilteredByPurpose);
     // console.log('citiesFilteredByProperty', citiesFilteredByProperty);
-    console.log('citiesFilteredByPurpose', citiesFilteredByPurpose);
-    console.log('commonDistrictsForPurposeAndCity', commonDistrictsForPurposeAndCity);
+    // console.log('citiesFilteredByPurpose', citiesFilteredByPurpose);
+    // console.log('commonDistrictsForPurposeAndCity', commonDistrictsForPurposeAndCity);
     // console.log('propertytypes', propertyTypes);
     // console.log('purposes', purposes);
     // console.log('commonCitiesforPropertyAndPurpose', commonCitiesforPropertyAndPurpose)
@@ -131,6 +137,10 @@ const SearchForm = () => {
           setIsDistrictDisabled(false);
           setFilteredDistricts([new Set(commonDistrictsForPropertyAndCity)]);
         }
+      }
+      if (property && city) {
+        setIsDistrictDisabled(false);
+        setFilteredDistricts([new Set(commonDistrictsForPropertyAndCity)]);
       }
     }
 
@@ -165,18 +175,33 @@ const SearchForm = () => {
   return (
     <div className={styles.formContainer}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <Select options={filteredPropertyTypes} label="Rodzaj nieruchomości" name='typeOfProperty' value={property} onChange={(e) => setProperty(e.target.value)} />
-        <Select options={filteredPurposes} label="Typ transakcji" name='purpose' value={purpose} onChange={(e) => setPurpose(e.target.value)} />
-        <Select options={filteredCities} label="Miasto" name="city" value={city} onChange={(e) => setCity(e.target.value)} />
-        <Select options={filteredDistricts} label="Dzielnica" name="district" value={district} disabled={isDistrictDisabled} onChange={(e) => setDistrict(e.target.value)} />
-        <Select options={filteredAreasMin} name="areaMin" label="Powierzchnia min." value={areaMin} onChange={(e) => setAreaMin(e.target.value)}></Select>
-        <Select options={filteredAreasMax} name="areMax" label="Powierzchnia max." value={areaMax} onChange={(e) => setAreaMax(e.target.value)}></Select>
-        <Select options={filteredRoomsMin} name="roomsMin" label="Ilość pokoi min." value={roomsMin} onChange={(e) => setRoomsMin(e.target.value)}></Select>
-        <Select options={filteredRoomsMax} name="roomsMax" label="Ilość pokoi max." value={roomsMax} onChange={(e) => setRoomsMax(e.target.value)}></Select>
+        <Select className={styles.selectLarge} options={filteredPropertyTypes} label="Rodzaj nieruchomości" name='typeOfProperty' value={property} onChange={(e) => setProperty(e.target.value)} />
+        <Select className={styles.selectLarge} options={filteredPurposes} label="Typ transakcji" name='purpose' value={purpose} onChange={(e) => setPurpose(e.target.value)} />
+        <Select className={styles.selectLarge} options={filteredCities} label="Miasto" name="city" value={city} onChange={(e) => setCity(e.target.value)} />
+        
+        <Select className={styles.selectLarge} options={filteredDistricts} label="Dzielnica" name="district" value={district} disabled={isDistrictDisabled} onChange={(e) => setDistrict(e.target.value)} />
+        
+        <div>
+          <label>Powierzchnia: </label>
+          <Select className={styles.selectSmall} options={filteredAreasMin} name="areaMin" label="Od" value={areaMin} onChange={(e) => setAreaMin(e.target.value)}></Select>
+          <Select className={styles.selectSmall} options={filteredAreasMax} name="areMax" label="Do" value={areaMax} onChange={(e) => setAreaMax(e.target.value)}></Select>
+        </div>
+        <div>
+          <label>Ilość pokoi: </label>
+          <Select className={styles.selectSmall} options={filteredRoomsMin} name="roomsMin" label="Od" value={roomsMin} onChange={(e) => setRoomsMin(e.target.value)}></Select>
+          <Select className={styles.selectSmall} options={filteredRoomsMax} name="roomsMax" label="Do" value={roomsMax} onChange={(e) => setRoomsMax(e.target.value)}></Select>
+        </div>
+        <div>
+          <label>Cena: </label>
+          <Select className={styles.selectSmall} options={filteredPriceMin} name="priceMin" label="Od" value={priceMin} onChange={(e) => setpriceMin(e.target.value)}></Select>
+          <Select className={styles.selectSmall} options={filteredPriceMax} name="priceMax" label="Do" value={priceMax} onChange={(e) => setpriceMax(e.target.value)}></Select>
+        </div>
+        
         <button className={styles.button} type='submit'><i className="icon-search">Wyszukaj nieruchomość</i></button>
       </form>
       {searchResult.length > 0 && (
         <div className={styles.searchResult}>
+          <h3 className={styles.searchResultHeading}>Wynik wyszukiwania: {searchResult.length}</h3>
           {searchResult.map(result => (
             <Link to={'/nieruchomosc/' + result.id} key={result.id} className={styles.propertiesLink}>
               <h4>{result.name}</h4>

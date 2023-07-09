@@ -1,9 +1,21 @@
 @import '../../styles/settings.scss';
 
 .form {
-  display: flex;
+  // display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  .selectLarge {
+    width: 200px;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 20px 50px;
+  }
+  .selectSmall {
+    width: 80px;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 20px 50px;
+  }
 
 }
 .button {
@@ -18,13 +30,15 @@
   margin-top: 50px;
  
 }
+.searchResultHeading {
+  text-align: center;
+  font-size: 30px;
+  margin: 40px;
+  text-transform: uppercase;
+}
 .propertiesLink {
   display: block;
   text-decoration: none;
   color: $color-light;
 }
-.select {
-  width: 200px;
-  padding: 7px;
-  border-radius: 10px;
-}
+

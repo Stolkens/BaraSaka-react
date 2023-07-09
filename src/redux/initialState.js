@@ -1,6 +1,7 @@
 const initialState = {
   areas: [20, 40, 60, 80, 100, 150, 200, 1000, 1500, 2000, 3000],
   numberOfRooms : [1, 2, 3, 4, 5, 6, 7, 8],
+  prices: [500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 300000,   ],
   properties : [
     {
       id: '1',
@@ -10,6 +11,7 @@ const initialState = {
       city: 'Katowice',
       area: 57,
       rooms: 3,
+      price: 220000,
       district: 'Centrum',
       description:"Dwupokojowe mieszaknie na drugim piętrze czteropiętrowego bloku i jakies inne pierdoły",
       images: [
@@ -31,6 +33,7 @@ const initialState = {
       city: 'Katowice',
       area: 157,
       rooms: 6,
+      price: 5000,
       district: 'Nikiszowiec',
       description:"Piękny dom na Nikiszowcu z blefnsndas csahdiasd ashdioasxdasn",
       images: [
@@ -45,6 +48,7 @@ const initialState = {
       city: 'Sosnowiec',
       area: 47,
       rooms: 2,
+      price: 2000,
       district: 'Centrum',
       description:"W samym srodku niczego mieskzanie djsdkasmcasasm xasnjcbasklx snxianskxmas",
       images: [
@@ -59,6 +63,7 @@ const initialState = {
       city: 'Chorzów',
       area: 82,
       rooms: 4,
+      price: 200000,
       district: 'Batory',
       description:"Dla odwaznych mieskzanie na Batorym bcsda c scsioc cnsijaso nsiasmoxa",
       images: [
@@ -72,6 +77,7 @@ const initialState = {
       purpose: 'sprzedaż',
       city: 'Katowice',
       area: 2000,
+      price: 300000,
       district: 'Wełnowiec',
       description:"Kawałek ziemi w nieciekawej okolicy csdhcias csniasnc ascxiasnx asxnasixna",
       images: [
@@ -86,6 +92,7 @@ const initialState = {
       city: 'Katowice',
       area: 90,
       rooms: 4,
+      price: 420000,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [
@@ -100,6 +107,7 @@ const initialState = {
       city: 'Sosnowiec',
       area: 52,
       rooms: 3,
+      price: 3500,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [
@@ -114,6 +122,7 @@ const initialState = {
       city: 'Katowice',
       area: 45,
       rooms: 2,
+      price: 120000,
       district: 'Centrum',
       description:"Mieszkanie w cdssdffsdv vsdvsd fsdf sdf  fsdf ds fsd fsdsd",
       images: [
@@ -128,6 +137,7 @@ const initialState = {
       city: 'Katowice',
       area: 210,
       rooms: 5,
+      price: 520000,
       district: 'Nikiszowiec',
       description:"Dom w dasdasdvsd dasdas dasdas  kasuasda sbasdas sakbdasd",
       images: [
@@ -142,6 +152,7 @@ const initialState = {
       city: 'Katowice',
       area: 72,
       rooms: 4,
+      price: 320000,
       district: 'Centrum',
       description:"Mieszkanie w kamienicy w centrum  kasuasda sbasdas sakbdasd",
       images: [
